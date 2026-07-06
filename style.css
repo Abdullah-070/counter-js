@@ -1,0 +1,11 @@
+body { font-family: system-ui, sans-serif; background:#0f172a; color:#e2e8f0; display:flex; flex-direction:column; align-items:center; padding-top:80px; }
+h1 { margin-bottom: 4px; }
+p.sub { color:#94a3b8; margin-top:0; }
+.card { background:#1e293b; padding:32px 48px; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,.4); text-align:center; }
+#count-a, #count-b { font-size:64px; font-weight:700; margin:16px 0; }
+.btns { display:flex; gap:12px; justify-content:center; }
+button { padding:10px 20px; font-size:16px; border:none; border-radius:8px; cursor:pointer; background:#6366f1; color:white; transition:transform .1s; }
+button:hover { background:#4f46e5; }
+button:active { transform: scale(0.95); }
+button.reset { background:#334155; }
+#log { margin-top:20px; font-size:13px; color:#64748b; max-width:340px; }

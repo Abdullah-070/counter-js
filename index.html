@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Closure Counter</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Counter Demo</h1>
+  <p class="sub">Two independent counters, each built from the same closure factory</p>
+
+  <div class="card">
+    <div>Counter A</div>
+    <div id="count-a">0</div>
+    <div class="btns">
+      <button data-action="dec" data-target="a">-</button>
+      <button class="reset" data-action="reset" data-target="a">Reset</button>
+      <button data-action="inc" data-target="a">+</button>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="card">
+    <div>Counter B (step +5)</div>
+    <div id="count-b">0</div>
+    <div class="btns">
+      <button data-action="dec" data-target="b">-5</button>
+      <button class="reset" data-action="reset" data-target="b">Reset</button>
+      <button data-action="inc" data-target="b">+5</button>
+    </div>
+  </div>
+
+  <p id="log"></p>
+
+  <script src="script.js"></script>
+</body>
+</html>
