@@ -38,17 +38,19 @@ const counters = { a: counterA, b: counterB };
 
 /**
  * HOISTING NOTE:
- * `logAction` below is called before its declaration further down the file.
- * That works because `function` declarations are hoisted — the whole
- * function (name + body) is registered in memory before any code runs.
- * Contrast that with `const totalClicks = 0` — the *variable* `totalClicks`
- * is hoisted too, but only the declaration, not the value. Trying to read
- * it before the `const` line would throw a ReferenceError (the "temporal
- * dead zone"), whereas `var` would just give you `undefined`.
+ * `logAction('App started')` is called below before its own
+ * `function logAction(...)` declaration further down the file — that's
+ * fine because function declarations are hoisted — the whole function
+ * (name + body) is registered in memory before any code runs.
+ * `totalClicks`, on the other hand, has to be declared with `let` BEFORE
+ * this point. `let`/`const` variables are hoisted too, but only the
+ * declaration, not the value — reading them before their line executes
+ * throws a ReferenceError (the "temporal dead zone"), unlike `var`, which
+ * would just give you `undefined`.
  */
-logAction('App started');
+let totalClicks = 0;
 
-let totalClicks = 0; // only usable after this line, unlike hoisted functions
+logAction('App started');
 
 function logAction(message) {
   const el = document.getElementById('log');
